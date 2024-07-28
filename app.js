@@ -10,6 +10,10 @@ app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', path.join(__dirname, 'views'));
 
+const authRoute = require('./auth')
+
+app.use('/', authRoute)
+    
 app.listen(PORT, () => {
   console.log(`Running at port ${PORT}`);
 });
