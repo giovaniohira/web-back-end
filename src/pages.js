@@ -64,7 +64,7 @@ router.get('/admin/edit/:url', checkAuth, (req, res) => {
       console.error(err);
       return res.status(500).send('Erro ao carregar a página para edição');
     }
-    res.render('edit', { url: pageUrl, content });
+    res.render('edit', { title: pageUrl ,url: pageUrl, content });
   });
 });
 
@@ -102,7 +102,7 @@ router.get('/:page', (req, res) => {
     const filePath = path.join(pagesDir, `${page}.txt`);
     fs.readFile(filePath, 'utf-8', (err, data) => {
       if (err) res.status(404).send('Página não encontrada');
-      else res.render('page', { content: data });
+      else res.render('page', { title: page, content: data });
     });
   });
 

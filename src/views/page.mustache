@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{.}}</title>
+  <title>{{title}}</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header>
-    <h1>{{.}}</h1>
+    <h1>{{title}}</h1>
+    <main>
+      {{{content}}}
+    </main>
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/admin">Criar nova página</a></li>
+        <button onclick="window.location.href='/'">Home</button>
+        <br/><br/>
+        <button onclick="window.location.href='/admin'">Criar nova página</button>
       </ul>
     </nav>
   </header>
-  <main>
-    {{{content}}}
-  </main>
+ 
   <footer>
     <p>&copy; FastPages</p>
   </footer>
