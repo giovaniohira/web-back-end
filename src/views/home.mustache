@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>FastPages</h1>
+  <ul>
+    {{#pages}}
+      <div class="pageList">
+        <a href="/{{.}}">
+          <div class="page">{{.}}</div>
+        </a>
+      </div>
+    {{/pages}}
+  </ul>
+  <a href="/admin">Criar Nova Página</a>
+</body>
+</html>
