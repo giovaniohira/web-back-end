@@ -10,7 +10,7 @@ const PORT = 3000;
 
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
@@ -18,8 +18,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
 }));
-app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.static(path.join(__dirname, '../public')));
 
 const authRoute = require('./auth')
 const pagesRoute = require('./pages')
