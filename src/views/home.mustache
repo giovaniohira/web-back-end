@@ -5,17 +5,21 @@
   <title>Home</title>
   <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body class="home-wrapper">
   <h1>FastPages</h1>
-  <ul>
-    {{#pages}}
-      <div class="pageList">
-        <a href="/{{.}}">
-          <div class="page">{{.}}</div>
-        </a>
-      </div>
-    {{/pages}}
-  </ul>
-  <a href="/admin">Criar Nova Página</a>
+    <div class="page-list">
+      {{#pages}}
+          <a href="/{{.}}">
+            <div class="page">
+              <h2>{{.}}</h2>
+              <div>
+                <a href="/admin/edit/{{.}}"><button id="edit-button">Editar</button></a>
+                <a href="/admin/delete/{{.}}"><button id="edit-button">Excluir</button></a>
+              </div>
+            </div>
+          </a>
+      {{/pages}}
+    </div>
+  <a href="/admin/"><button id="edit-button">Criar Nova Página</button></a>
 </body>
 </html>
